@@ -10,7 +10,7 @@ from pyzbar.pyzbar import decode
 import os
 from os import listdir
 from os.path import isfile, join
-import config
+#import config
 import json
 import firebase_admin
 from firebase_admin import credentials
