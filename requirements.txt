@@ -1,0 +1,3 @@
+python-telegram-bot
+pyzbar
+firebase_admin
