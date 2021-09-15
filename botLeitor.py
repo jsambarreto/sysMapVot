@@ -95,13 +95,13 @@ if __name__ == '__main__':
             context.bot.sendMessage(chat_id=chat_id, text='Não foi possivel identificar o QRCode, tente novamente.')
             #os.remove("qrcode.png")
 
-    def main():
-        updater = Updater(TOKEN, request_kwargs={'read_timeout': 20, 'connect_timeout': 20}, use_context=True)
-        dp = updater.dispatcher
+    #def main():
+    updater = Updater(TOKEN, request_kwargs={'read_timeout': 20, 'connect_timeout': 20}, use_context=True)
+    dp = updater.dispatcher
 
-        dp.add_handler(MessageHandler(Filters.photo, decode_qr))
+    dp.add_handler(MessageHandler(Filters.photo, decode_qr))
 
-        updater.start_polling()
-        updater.idle()
+    updater.start_polling()
+    updater.idle()
 
-    main()
+    #main()
