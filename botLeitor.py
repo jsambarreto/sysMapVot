@@ -20,15 +20,15 @@ from io import BytesIO
 from PIL import Image
 from random import randint
 
-#FB = json.loads(os.environ.get('FIREBASE_CREDENTIALS', None))
-#cred = credentials.Certificate(FB)
-cred = credentials.Certificate('registra-urna-firebase-adminsdk-le28m-70d82a58ae.json')
+FB = json.loads(os.environ.get('FIREBASE_CREDENTIALS', None))
+cred = credentials.Certificate(FB)
+#cred = credentials.Certificate('registra-urna-firebase-adminsdk-le28m-70d82a58ae.json')
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-TOKEN = config.TOKEN
-#TOKEN = os.environ.get('TOKEN', None)
+#TOKEN = config.TOKEN
+TOKEN = os.environ.get('TOKEN', None)
 base = []
 def gerarIdLeitura():
     return randint(0,1000)*58
